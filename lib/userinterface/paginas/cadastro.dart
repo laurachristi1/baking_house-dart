@@ -36,16 +36,8 @@ class _TelaCadastroState extends State<TelaCadastro> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
-                    'Cadastre-se no Haki List!',
-                    style: TextStyle(
-                      fontSize: 24.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                  ),
                   const SizedBox(height: 32),
-                  Image.asset('/listacadastro.png', width: 225),
+                  Image.asset('/logo.png', width: 225),
                   const SizedBox(height: 32),
                   TextFormField(
                     controller: nomeController,
@@ -53,6 +45,9 @@ class _TelaCadastroState extends State<TelaCadastro> {
                       hintText: 'Usuário',
                       prefixIcon: Icon(Icons.person),
                       border: OutlineInputBorder(),
+                      focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.pinkAccent),
+                    )
                     ),
                   ),
                   const SizedBox(height: 16),
@@ -63,6 +58,9 @@ class _TelaCadastroState extends State<TelaCadastro> {
                       hintText: 'Senha',
                       prefixIcon: Icon(Icons.lock),
                       border: OutlineInputBorder(),
+                      focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.pinkAccent),
+                    )
                     ),
                   ),
                   const SizedBox(height: 16),
@@ -72,6 +70,9 @@ class _TelaCadastroState extends State<TelaCadastro> {
                       hintText: 'Repita sua senha',
                       prefixIcon: Icon(Icons.lock),
                       border: OutlineInputBorder(),
+                      focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.pinkAccent),
+                    )
                     ),
                   ),
                   const SizedBox(height: 16),
@@ -84,8 +85,10 @@ class _TelaCadastroState extends State<TelaCadastro> {
                             _isChecked = value!;
                           });
                         },
+                        activeColor: Colors.pinkAccent,
                       ),
-                      Text('Aceito os termos e condições.'),
+                      const Text('Aceito os termos e condições.'),
+                    
                     ],
                   ),
                   const SizedBox(height: 32),
@@ -97,8 +100,8 @@ class _TelaCadastroState extends State<TelaCadastro> {
                     },
                     child: const Text('Finalize seu cadastro'),
                     style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.white,
-                      backgroundColor: Theme.of(context).primaryColor,
+                     foregroundColor: Colors.white,
+                     backgroundColor: const Color.fromARGB(255, 255, 124, 168), 
                       minimumSize: const Size(double.infinity, 50),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8),

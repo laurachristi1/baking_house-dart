@@ -1,9 +1,7 @@
 import 'package:baking_house/database/user_database.dart';
 import 'package:baking_house/model/user.model.dart';
-import 'package:baking_house/paginas/compras.dart';
+import 'package:baking_house/userinterface/paginas/compras.dart';
 import 'package:flutter/material.dart';
-
-
 
 class UserController {
   //Criamos o objeto Database para termos acesso a lista que fizemos nele
@@ -15,7 +13,7 @@ class UserController {
         user.where((item) => item.name == nome);
 
       Navigator.pushAndRemoveUntil(context,
-          MaterialPageRoute(builder: (_) => const TelaCompras()), (route) => false);
+          MaterialPageRoute(builder: (_) => const  TelaCompras()), (route) => false);
   }
 
   cadastro(context, String nome, String senha) {

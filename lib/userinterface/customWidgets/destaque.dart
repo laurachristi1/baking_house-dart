@@ -9,7 +9,7 @@ Widget destaqueS({String title = "Título"}) {
       child: Text(
         title,
         style: GoogleFonts.nunitoSans(
-          color: Colors.white,
+          color: Colors.black,
           fontSize: 24,
           fontWeight: FontWeight.bold,
         ),

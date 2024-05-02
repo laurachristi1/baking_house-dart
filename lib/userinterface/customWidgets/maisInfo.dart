@@ -18,14 +18,14 @@ Widget verMais(List<Map<String, String>> items,
                   Text(
                     title,
                     style: GoogleFonts.nunitoSans(
-                        color: Colors.white,
+                        color: Colors.black,
                         fontSize: 24,
                         fontWeight: FontWeight.bold),
                   ),
                   Text(
                     subtitle,
                     style: GoogleFonts.nunitoSans(
-                        color: Colors.grey[400], fontSize: 18),
+                        color: Colors.black87, fontSize: 18),
                   ),
                 ],
               ),

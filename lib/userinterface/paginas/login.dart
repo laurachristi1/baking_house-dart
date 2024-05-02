@@ -1,10 +1,9 @@
 import 'package:baking_house/controller/user_controller.dart';
-import 'package:baking_house/paginas/cadastro.dart';
+import 'package:baking_house/userinterface/paginas/cadastro.dart';
 import 'package:flutter/material.dart';
 
-
 class Login extends StatefulWidget {
-  const Login({super.key});
+  const Login({Key? key}) : super(key: key);
 
   @override
   State<Login> createState() => _LoginState();
@@ -26,16 +25,8 @@ class _LoginState extends State<Login> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text(
-                  'Bem-vindo ao Haki List!',
-                  style: TextStyle(
-                    fontSize: 24.0,
-                    fontWeight: FontWeight.bold, 
-                    color: Colors.black, 
-                  ),
-                ),
-                const SizedBox(height: 25), 
-                Image.asset('/logo.png', width: 300), 
+                const SizedBox(height: 25),
+                Image.asset('/logo.png', width: 300),
                 const SizedBox(height: 25),
                 TextFormField(
                   controller: nomeController,
@@ -43,6 +34,9 @@ class _LoginState extends State<Login> {
                     hintText: 'Usuário',
                     prefixIcon: Icon(Icons.person),
                     border: OutlineInputBorder(),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.pinkAccent),
+                    ),
                   ),
                 ),
                 const SizedBox(height: 16),
@@ -53,21 +47,24 @@ class _LoginState extends State<Login> {
                     hintText: 'Senha',
                     prefixIcon: Icon(Icons.lock),
                     border: OutlineInputBorder(),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: Colors.pinkAccent),
+                    )
                   ),
                 ),
                 const SizedBox(height: 32),
                 ElevatedButton(
                   onPressed: () {
                     userController.login(
-                      context, 
-                      nomeController.text, 
-                      passwordController.text
+                      context,
+                      nomeController.text,
+                      passwordController.text,
                     );
                   },
                   child: const Text('Login'),
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.white,
-                    backgroundColor: Theme.of(context).primaryColor,
+                    backgroundColor: const Color.fromARGB(255, 255, 124, 168), 
                     minimumSize: const Size(double.infinity, 50),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
@@ -80,11 +77,11 @@ class _LoginState extends State<Login> {
                       context,
                       MaterialPageRoute(builder: (context) => const TelaCadastro()),
                     );
-                  },
-                  child: const Text(
+                  },                  child: const Text(
                     'Não tem conta? Cadastre-se',
-                    style: TextStyle(decoration: TextDecoration.underline),
+                    style: TextStyle(decoration: TextDecoration.underline, color: Colors.pinkAccent,),
                   ),
+                  
                 ),
                 const SizedBox(height: 32),
                 const Text('Ou entre com'),
@@ -93,15 +90,15 @@ class _LoginState extends State<Login> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     IconButton(
-                      icon: Image.asset('/apple_logo.png', width: 38), 
+                      icon: Image.asset('/apple_logo.png', width: 38),
                       onPressed: () {},
                     ),
                     IconButton(
-                      icon: Image.asset('/gmail-icon.png', width: 30), 
+                      icon: Image.asset('/gmail-icon.png', width: 30),
                       onPressed: () {},
                     ),
                     IconButton(
-                      icon: Image.asset('/outlook-icon.png', width: 30), 
+                      icon: Image.asset('/outlook-icon.png', width: 30),
                       onPressed: () {},
                     ),
                   ],

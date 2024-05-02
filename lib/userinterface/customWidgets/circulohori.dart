@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 Widget circuloContainer(List<Map<String, String>> items) {
   return Container(
     height: 170,
@@ -37,7 +38,7 @@ Widget circuloContainer(List<Map<String, String>> items) {
                   Text(
                     item['text']!,
                     textAlign: TextAlign.center,
-                    style: GoogleFonts.nunitoSans(color: Colors.white, fontSize: 16),
+                    style: GoogleFonts.nunitoSans(color: Colors.black, fontSize: 16),
                   ),
                 ],
               ),

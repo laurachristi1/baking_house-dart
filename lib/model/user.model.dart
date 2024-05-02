@@ -9,3 +9,14 @@ class User {
     return "name: $name, password";
   }
 }
+
+
+/*/**/
+class UserModel {
+  String username;
+  String email;
+  List<ProductModel> products = [];
+  List<ProductModel> favorites = [];
+}
+
+ */

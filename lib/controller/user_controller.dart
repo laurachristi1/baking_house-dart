@@ -1,6 +1,6 @@
 import 'package:baking_house/database/user_database.dart';
 import 'package:baking_house/model/user.model.dart';
-import 'package:baking_house/userinterface/paginas/compras.dart';
+import 'package:baking_house/userinterface/paginas/homePage.dart';
 import 'package:flutter/material.dart';
 
 class UserController {
@@ -13,7 +13,7 @@ class UserController {
         user.where((item) => item.name == nome);
 
       Navigator.pushAndRemoveUntil(context,
-          MaterialPageRoute(builder: (_) => const  TelaCompras()), (route) => false);
+          MaterialPageRoute(builder: (_) => const  HomePage()), (route) => false);
   }
 
   cadastro(context, String nome, String senha) {

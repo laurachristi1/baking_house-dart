@@ -161,77 +161,66 @@ class _TelaComprasState extends State<TelaCompras> {
       ),
     );
   }
+  
+Widget buildProductCard(String title, String imageAsset, double price) {
 
-  Widget buildProductCard(String title, String imageAsset, double price) {
-    bool isFavorite = false;
-
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => TelaProdutos(
-              title: title,
-              imageAsset: imageAsset,
-              price: price,
+  return GestureDetector(
+    onTap: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => TelaProdutos(
+            title: title,
+            imageAsset: imageAsset,
+            price: price,
+          ),
+        ),
+      );
+    },
+    child: Container(
+      width: 200,
+      height: 240,
+      margin: const EdgeInsets.all(8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            height: 160,
+            width: 200,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(imageAsset),
+                fit: BoxFit.cover,
+              ),
+              borderRadius: BorderRadius.circular(20),
             ),
           ),
-        );
-      },
-      child: Container(
-        width: 200,
-        height: 240,
-        margin: const EdgeInsets.all(8),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-              height: 160,
-              width: 200,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(imageAsset),
-                  fit: BoxFit.cover,
-                ),
-                borderRadius: BorderRadius.circular(20),
+          const SizedBox(height: 10),
+          Text(
+            title,
+            style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: Colors.black),
+          ),
+          const SizedBox(height: 4),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                '\$${price.toStringAsFixed(2)}',
+                style: const TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.green),
               ),
-            ),
-            const SizedBox(height: 10),
-            Text(
-              title,
-              style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black),
-            ),
-            const SizedBox(height: 4),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  '\$${price.toStringAsFixed(2)}',
-                  style: const TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.green),
-                ),
-                const SizedBox(width: 5),
-                IconButton(
-                  icon: Icon(
-                    isFavorite ? Icons.favorite : Icons.favorite_border,
-                    color: isFavorite ? Colors.red : Colors.grey,
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      isFavorite = !isFavorite;
-                    });
-                  },
-                ),
-              ],
-            ),
-          ],
-        ),
+              const SizedBox(width: 5),
+             
+            ],
+          ),
+        ],
       ),
-    );
-  }
+    ),
+  );
+}
 }
